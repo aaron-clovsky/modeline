@@ -1,0 +1,191 @@
+
+BasedOnStyle: GNU
+
+AccessModifierOffset: 4
+
+AlignAfterOpenBracket: true
+
+AlignArrayOfStructures: Right
+
+AlignConsecutiveAssignments:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: true
+  PadOperators: true
+
+AlignConsecutiveBitFields:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+
+AlignConsecutiveDeclarations:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+  AlignFunctionDeclarations: false
+  AlignFunctionPointers: true
+
+AlignConsecutiveMacros:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+
+AlignEscapedNewlines: LeftWithLastLine
+
+AlignOperands: Align
+
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 2
+
+AllowAllArgumentsOnNextLine: true
+
+AllowAllParametersOfDeclarationOnNextLine: false
+
+AllowShortBlocksOnASingleLine: Empty
+
+AllowShortCaseExpressionOnASingleLine: false
+
+AllowShortCaseLabelsOnASingleLine: true
+
+AllowShortEnumsOnASingleLine: false
+
+AllowShortFunctionsOnASingleLine: false
+
+AllowShortIfStatementsOnASingleLine: WithoutElse
+
+AllowShortLoopsOnASingleLine: true
+
+AlwaysBreakBeforeMultilineStrings: false
+
+BinPackArguments: false
+
+BinPackLongBracedList: true
+
+BinPackParameters: OnePerLine
+
+BitFieldColonSpacing: Both
+
+BreakAdjacentStringLiterals: true
+
+BreakAfterReturnType: ExceptShortType # !! REVIEW ME !!
+
+BreakBeforeBinaryOperators: None
+
+BreakBeforeBraces: Linux # !! DEAL WITH IT !!
+
+BreakBeforeInlineASMColon: OnlyMultiline
+
+BreakBeforeTernaryOperators: false
+
+BreakBinaryOperations: Never # !! REVIEW ME !!
+
+BreakFunctionDefinitionParameters: false
+
+BreakStringLiterals: false # !! REVIEW ME !!
+
+ColumnLimit: 80
+
+ContinuationIndentWidth: 4
+
+DerivePointerAlignment: false # !! REVIEW ME !!
+
+IncludeBlocks: Preserve
+
+IndentCaseBlocks: false
+
+IndentCaseLabels: true
+
+IndentExternBlock: true
+
+IndentGotoLabels: true # !! REVIEW ME !!
+
+IndentPPDirectives: BeforeHash
+
+IndentWidth: 4
+
+IndentWrappedFunctionNames: true
+
+InsertNewlineAtEOF: true
+
+InsertTrailingCommas: None
+
+KeepEmptyLines:
+  AtEndOfFile: false
+  AtStartOfBlock: false
+  AtStartOfFile: false
+
+KeepFormFeed: false # !! REVIEW ME !!
+
+LineEnding: LF
+
+MaxEmptyLinesToKeep: 4
+
+PPIndentWidth: -1
+
+PenaltyBreakAssignment: 1000
+PenaltyBreakBeforeFirstCallParameter: 1000
+PenaltyBreakBeforeMemberAccess: 2000
+
+# PenaltyBreakComment
+# PenaltyBreakFirstLessLess
+PenaltyBreakOpenParenthesis: 1000
+PenaltyExcessCharacter: 100000
+# PenaltyBreakScopeResolution
+# PenaltyBreakString
+# PenaltyBreakTemplateDeclaration
+# PenaltyExcessCharacter
+# PenaltyIndentedWhitespace
+PenaltyReturnTypeOnItsOwnLine: 99
+
+PointerAlignment: Middle
+
+QualifierAlignment: Leave
+
+ReflowComments: IndentOnly # !! REVIEW ME !!
+
+RemoveEmptyLinesInUnwrappedLines: true
+
+SeparateDefinitionBlocks: Always
+
+SkipMacroDefinitionBody: false
+
+SpaceAfterCStyleCast: false
+
+SpaceAfterLogicalNot: false
+
+SpaceAroundPointerQualifiers: Both
+
+SpaceBeforeAssignmentOperators: true
+
+SpaceBeforeCaseColon: false
+
+SpaceBeforeParens: ControlStatementsExceptControlMacros
+
+SpaceBeforeSquareBrackets: false
+
+SpaceInEmptyBlock: true
+
+SpacesBeforeTrailingComments: 1
+
+SpacesInLineCommentPrefix:
+  Minimum: 1
+  Maximum: -1
+
+SpacesInParens: Never
+
+SpacesInSquareBrackets: false
+
+TabWidth: 4
+
+UseTab: Never
+
+WhitespaceSensitiveMacros: [UTIL_XSTR, F_UTIL_XSTR]
+
+SortIncludes: Never
