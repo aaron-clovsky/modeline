@@ -1,4 +1,3 @@
-
 BasedOnStyle: GNU
 
 AccessModifierOffset: 4
@@ -78,23 +77,23 @@ BreakAfterReturnType: ExceptShortType # !! REVIEW ME !!
 
 BreakBeforeBinaryOperators: None
 
-BreakBeforeBraces: Linux # !! DEAL WITH IT !!
+BreakBeforeBraces: Linux
 
 BreakBeforeInlineASMColon: OnlyMultiline
 
 BreakBeforeTernaryOperators: false
 
-BreakBinaryOperations: Never # !! REVIEW ME !!
+BreakBinaryOperations: Never
 
 BreakFunctionDefinitionParameters: false
 
-BreakStringLiterals: false # !! REVIEW ME !!
+BreakStringLiterals: false
 
 ColumnLimit: 80
 
 ContinuationIndentWidth: 4
 
-DerivePointerAlignment: false # !! REVIEW ME !!
+DerivePointerAlignment: false
 
 IncludeBlocks: Preserve
 
@@ -102,9 +101,9 @@ IndentCaseBlocks: false
 
 IndentCaseLabels: true
 
-IndentExternBlock: true
+IndentExternBlock: NoIndent
 
-IndentGotoLabels: true # !! REVIEW ME !!
+IndentGotoLabels: true
 
 IndentPPDirectives: BeforeHash
 
@@ -121,7 +120,7 @@ KeepEmptyLines:
   AtStartOfBlock: false
   AtStartOfFile: false
 
-KeepFormFeed: false # !! REVIEW ME !!
+KeepFormFeed: false
 
 LineEnding: LF
 
@@ -148,7 +147,7 @@ PointerAlignment: Middle
 
 QualifierAlignment: Leave
 
-ReflowComments: IndentOnly # !! REVIEW ME !!
+ReflowComments: IndentOnly
 
 RemoveEmptyLinesInUnwrappedLines: true
 

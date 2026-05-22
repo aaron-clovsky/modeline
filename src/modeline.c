@@ -243,7 +243,7 @@ static int modeline_to_modeline_monitor(modeline_monitor * monitor,
 static enum modeline_error modeline_create(const modeline_monitor * monitor,
                                            modeline *               mode)
 {
-    const double scan_factor = (double)mode->interlace * 2;
+    const double scan_factor = (mode->interlace != 0) ? 2.0 : 1.0;
     double       vfreq_real  = 0;
 
     /* Calculate expected achievable refresh for this height */

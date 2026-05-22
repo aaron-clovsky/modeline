@@ -75,6 +75,10 @@ typedef enum modeline_error {
     MODELINE_ERROR_CALC_V_FREQ_CHECK = -10
 } modeline_error;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*******************************************************************************
 External Constants
 *******************************************************************************/
@@ -93,3 +97,7 @@ enum modeline_error modeline_calc(const struct modeline_monitor * monitor,
                                   struct modeline *               mode);
 
 const char * modeline_error_string(enum modeline_error error);
+
+#ifdef __cplusplus
+}
+#endif
