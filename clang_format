@@ -73,7 +73,7 @@ BitFieldColonSpacing: Both
 
 BreakAdjacentStringLiterals: true
 
-BreakAfterReturnType: ExceptShortType # !! REVIEW ME !!
+BreakAfterReturnType: ExceptShortType
 
 BreakBeforeBinaryOperators: None
 
