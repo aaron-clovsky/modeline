@@ -23,6 +23,12 @@ Headers
 *******************************************************************************/
 #include <stdint.h>
 
+#ifdef LIBMODELINE_EXPORTS
+    #define DLL_FUNC __declspec(dllexport)
+#else
+    #define DLL_FUNC
+#endif
+
 /*******************************************************************************
 Types
 *******************************************************************************/
@@ -87,14 +93,15 @@ extern struct modeline_monitor MODELINE_MONITOR_GENERIC_15KHZ;
 /*******************************************************************************
 External Functions
 *******************************************************************************/
-enum modeline_error modeline_calc(const struct modeline_monitor * monitor,
-                                  unsigned int                    width,
-                                  unsigned int                    height,
-                                  double                          refresh_rate,
-                                  double                          h_size,
-                                  int                             h_shift,
-                                  int                             v_shift,
-                                  struct modeline *               mode);
+DLL_FUNC enum modeline_error
+    modeline_calc(const struct modeline_monitor * monitor,
+                  unsigned int                    width,
+                  unsigned int                    height,
+                  double                          refresh_rate,
+                  double                          h_size,
+                  int                             h_shift,
+                  int                             v_shift,
+                  struct modeline *               mode);
 
 const char * modeline_error_string(enum modeline_error error);
 
