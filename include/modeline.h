@@ -23,10 +23,13 @@ Headers
 *******************************************************************************/
 #include <stdint.h>
 
+/*******************************************************************************
+Macros
+*******************************************************************************/
 #ifdef LIBMODELINE_EXPORTS
-    #define DLL_FUNC __declspec(dllexport)
+    #define DLL_EXPORT __declspec(dllexport)
 #else
-    #define DLL_FUNC
+    #define DLL_EXPORT
 #endif
 
 /*******************************************************************************
@@ -88,12 +91,12 @@ extern "C" {
 /*******************************************************************************
 External Constants
 *******************************************************************************/
-extern struct modeline_monitor MODELINE_MONITOR_GENERIC_15KHZ;
+DLL_EXPORT extern struct modeline_monitor MODELINE_MONITOR_GENERIC_15KHZ;
 
 /*******************************************************************************
 External Functions
 *******************************************************************************/
-DLL_FUNC enum modeline_error
+DLL_EXPORT extern enum modeline_error
     modeline_calc(const struct modeline_monitor * monitor,
                   unsigned int                    width,
                   unsigned int                    height,
@@ -103,7 +106,7 @@ DLL_FUNC enum modeline_error
                   int                             v_shift,
                   struct modeline *               mode);
 
-const char * modeline_error_string(enum modeline_error error);
+DLL_EXPORT const char * modeline_error_string(enum modeline_error error);
 
 #ifdef __cplusplus
 }
