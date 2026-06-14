@@ -96,7 +96,7 @@ DLL_EXPORT extern struct modeline_monitor MODELINE_MONITOR_GENERIC_15KHZ;
 /*******************************************************************************
 External Functions
 *******************************************************************************/
-DLL_EXPORT extern enum modeline_error
+DLL_EXPORT enum modeline_error
     modeline_calc(const struct modeline_monitor * monitor,
                   unsigned int                    width,
                   unsigned int                    height,
