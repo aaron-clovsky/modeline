@@ -35,6 +35,10 @@ Macros
 /*******************************************************************************
 Types
 *******************************************************************************/
+#ifdef LIBMODELINE_EXPORTS
+    #pragma pack(push, 1)
+#endif
+
 typedef struct modeline {
     uint64_t pclock;
     int      hactive;
@@ -69,6 +73,10 @@ typedef struct modeline_monitor {
     int    interlaced_lines_max;
     double vertical_blank;
 } modeline_monitor;
+
+#ifdef LIBMODELINE_EXPORTS
+    #pragma pack(pop, 1)
+#endif
 
 typedef enum modeline_error {
     MODELINE_ERROR_NONE              = 0,
