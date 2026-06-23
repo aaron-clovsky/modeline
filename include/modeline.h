@@ -75,7 +75,7 @@ typedef struct modeline_monitor {
 } modeline_monitor;
 
 #ifdef LIBMODELINE_EXPORTS
-    #pragma pack(pop, 1)
+    #pragma pack(pop)
 #endif
 
 typedef enum modeline_error {

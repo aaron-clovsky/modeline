@@ -68,7 +68,7 @@ Internal Functions
 */
 static int round_c89(double number)
 {
-    return (number < 0.0) ? ceil(number - 0.5) : floor(number + 0.5);
+    return (int)((number < 0.0) ? ceil(number - 0.5) : floor(number + 0.5));
 }
 
 /*
@@ -76,7 +76,7 @@ static int round_c89(double number)
 */
 static int round_odd(double number)
 {
-    return ((int)ceil(number) % 2 == 0) ? floor(number) : ceil(number);
+    return (int)(((int)ceil(number) % 2 == 0) ? floor(number) : ceil(number));
 }
 
 /*
@@ -152,7 +152,7 @@ static int vert_lines_for_height(const modeline_monitor * monitor,
     tmp_a = scan_factor * (1.0 - vfreq * vblank_borders);
     tmp_b = vfreq * height / tmp_a * vblank_borders;
 
-    vvt = MAX(1.0, height / scan_factor + round_c89(tmp_b));
+    vvt = (int)MAX(1.0, height / scan_factor + round_c89(tmp_b));
 
     while ((vfreq * vvt < monitor->hfreq_min) &&
            (vfreq * (vvt + 1) < monitor->hfreq_max)) {
@@ -283,10 +283,10 @@ static enum modeline_error modeline_create(const modeline_monitor * monitor,
         get_line_params(monitor, mode);
 
         /* Calculate pixel clock */
-        mode->pclock = mode->htotal * mode->hfreq;
+        mode->pclock = (uint64_t)(mode->htotal * mode->hfreq);
 
         /* Vertical blanking */
-        mode->vtotal = vvt_ini * scan_factor;
+        mode->vtotal = (int)(vvt_ini * scan_factor);
 
         vblank_lines = (int)round_c89(mode->hfreq * monitor->vertical_blank) +
                        interlace_incr;
@@ -383,7 +383,7 @@ static enum modeline_error modeline_adjust(modeline * mode,
 
         v_front_porch = vbegin - vactive;
         v_back_porch  = vend - vtotal;
-        max_vtotal    = hfreq_max / mode->vfreq;
+        max_vtotal    = (int)(hfreq_max / mode->vfreq);
         border        = max_vtotal - vtotal;
         padding       = 0;
 
