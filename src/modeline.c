@@ -82,7 +82,7 @@ static int round_odd(double number)
 /*
     Calculate horizontal part of modeline
 */
-static int get_line_params(const modeline_monitor * monitor, modeline * mode)
+static void get_line_params(modeline * mode, const modeline_monitor * monitor)
 {
     int    hh, hs, he, ht;
     double line_time, char_time, new_char_time;
@@ -130,8 +130,6 @@ static int get_line_params(const modeline_monitor * monitor, modeline * mode)
     mode->hbegin = hh + hs;
     mode->hend   = hh + hs + he;
     mode->htotal = hh + hs + he + ht;
-
-    return 0;
 }
 
 /*
@@ -180,7 +178,7 @@ static double max_vfreq_for_height(const modeline_monitor * monitor,
     Calculate new modeline
 */
 static int modeline_to_modeline_monitor(modeline_monitor * monitor,
-                                        modeline *         mode)
+                                        const modeline *   mode)
 {
     double line_time;
     double pixel_time;
@@ -280,7 +278,7 @@ static enum modeline_error modeline_create(const modeline_monitor * monitor,
         mode->hfreq = mode->vfreq * vvt_ini;
 
         /* Fill horizontal part of modeline */
-        get_line_params(monitor, mode);
+        get_line_params(mode, monitor);
 
         /* Calculate pixel clock */
         mode->pclock = (uint64_t)(mode->htotal * mode->hfreq);
@@ -288,7 +286,7 @@ static enum modeline_error modeline_create(const modeline_monitor * monitor,
         /* Vertical blanking */
         mode->vtotal = (int)(vvt_ini * scan_factor);
 
-        vblank_lines = (int)round_c89(mode->hfreq * monitor->vertical_blank) +
+        vblank_lines = (double)round_c89(mode->hfreq * monitor->vertical_blank) +
                        interlace_incr;
 
         margin  = mode->vtotal - mode->vactive - vblank_lines * scan_factor;
@@ -459,7 +457,8 @@ enum modeline_error modeline_calc(const struct modeline_monitor * monitor,
                                   int                             v_shift,
                                   struct modeline *               mode)
 {
-    unsigned int        h_shift_abs, v_shift_abs;
+    unsigned int        h_shift_abs;
+    unsigned int        v_shift_abs;
     enum modeline_error error;
 
     /*
